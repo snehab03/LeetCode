@@ -1,0 +1,22 @@
+101. Symmetric Tree
+Link : https://leetcode.com/problems/symmetric-tree/description/
+Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
+
+class Solution {
+public:
+    bool solve(TreeNode* l_root,TreeNode* r_root){
+        if(l_root==nullptr && r_root==nullptr){
+            return true;
+        }
+        if(l_root==nullptr || r_root==nullptr){
+            return false;
+        }
+        if(l_root->val != r_root->val){
+            return false;
+        }
+        return solve(l_root->left,r_root->right) && solve(l_root->right,r_root->left);
+    }
+    bool isSymmetric(TreeNode* root) {
+        return solve(root->left,root->right);
+    }
+};
