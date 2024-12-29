@@ -1,0 +1,23 @@
+543. Diameter of Binary Tree
+https://leetcode.com/problems/diameter-of-binary-tree/description/
+
+The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.
+The length of a path between two nodes is represented by the number of edges between them.
+
+class Solution {
+public:
+    int f(TreeNode* root,int& dia){
+        if(!root){
+            return 0;
+        }
+        int l=f(root->left,dia);
+        int r=f(root->right,dia);
+        dia=max(dia,l+r);
+        return 1+max(l,r);
+    }
+    int diameterOfBinaryTree(TreeNode* root) {
+        int dia=0;
+        f(root,dia);
+        return dia;
+    }
+};
