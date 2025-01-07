@@ -1,11 +1,11 @@
-1930. Unique Length-3 Palindromic Subsequences
+// 1930. Unique Length-3 Palindromic Subsequences
 
-Link : https://leetcode.com/problems/unique-length-3-palindromic-subsequences/description/
-Given a string s, return the number of unique palindromes of length three that are a subsequence of s.
-Note that even if there are multiple ways to obtain the same subsequence, it is still only counted once.
+// Link : https://leetcode.com/problems/unique-length-3-palindromic-subsequences/description/
+// Given a string s, return the number of unique palindromes of length three that are a subsequence of s.
+// Note that even if there are multiple ways to obtain the same subsequence, it is still only counted once.
 
-step1 : take char with index from extreme left and right of s string.
-step2 : each characters between left and right are number of unique palindromes of length three
+// step1 : take char with index from extreme left and right of s string.
+// step2 : each characters between left and right are number of unique palindromes of length three
 class Solution {
 public:
     int countPalindromicSubsequence(string s) {
